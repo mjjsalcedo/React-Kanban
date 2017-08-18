@@ -4,7 +4,7 @@ const cardReducers = (state = [], action) => {
   console.log('action', action)
   switch (action.type) {
     case ADD_CARD:
-      return { card: [...action.card] }
+      return [...state, action.newCard]
     case EDIT_CARD:
       return editCard(state, action);
     case DELETE_CARD:
@@ -27,21 +27,6 @@ const cardReducers = (state = [], action) => {
       return state;
   }
 }
-
-/*function addCard(state, action) {
-  id = ++id;
-  return [
-    ...state,
-    {
-      id: id,
-      title: action.title,
-      priority: action.priority,
-      status: action.status,
-      createdBy: action.createdBy,
-      assignedTo: action.assignedTo
-    }
-  ];
-}*/
 
 function editCard(state, action) {
   var cardEdits = action.card

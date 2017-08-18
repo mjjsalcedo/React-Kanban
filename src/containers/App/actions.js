@@ -8,28 +8,21 @@ export const TOGGLE_TODO = 'TOGGLE_TODO'
 let id = 0;
 
 export const addCard = (card) => {
-
   return (dispatch) => {
-    /*addCardToDeck(card)*/
-    (card)=> {
-      id = ++id;
-      return  {
+    id = ++id;
+    let newCard = {
       id: id,
       title: card.title,
       priority: card.priority,
       status: card.status,
       createdBy: card.createdBy,
       assignedTo: card.assignedTo
-    }
-    .then(cards => {
-      console.log('moo',cards)
-      dispatch({
-        type: ADD_CARD,
-        cards
-      })
+    };
+    console.log('moo', newCard)
+    dispatch({
+      type: ADD_CARD,
+      newCard
     });
-    }
-
   }
 };
 
@@ -55,19 +48,3 @@ export function deleteCard(card) {
 export function toggleTodo(id) {
   return { type: TOGGLE_TODO, id: id }
 }
-
-
-
-/*var addCardToDeck = (card) => new Promise ((resolve, reject) => {
-  id = ++id;
-  var newCard = {
-      id: id,
-      title: card.title,
-      priority: card.priority,
-      status: card.status,
-      createdBy: card.createdBy,
-      assignedTo: card.assignedTo
-  }
-  return newCard;
-})
-*/
