@@ -80,8 +80,6 @@ const mapStateToProps = () => {
 const mapDispatchToProps = (dispatch) => {
   return {
     newCardAdd: (text) => {
-      let tmp = addCard(text);
-      console.log(tmp);
       dispatch(addCard(text));
     }
   }

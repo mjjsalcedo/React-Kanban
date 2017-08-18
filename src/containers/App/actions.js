@@ -18,7 +18,6 @@ export const addCard = (card) => {
       createdBy: card.createdBy,
       assignedTo: card.assignedTo
     };
-    console.log('moo', newCard)
     dispatch({
       type: ADD_CARD,
       newCard
@@ -48,3 +47,4 @@ export function deleteCard(card) {
 export function toggleTodo(id) {
   return { type: TOGGLE_TODO, id: id }
 }
+

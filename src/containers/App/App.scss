@@ -1,26 +1,17 @@
 .parent {
-
+  flex-wrap: wrap;
+  display: flex;
 }
 
-.queueColumn {
-    width: 33%;
-    padding: 10px;
-    display: inline-block;
-    box-sizing: border-box;
+.queueColumn, .progressColumn, .doneColumn {
+  width: 33%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.progressColumn {
-    width:33%;
-    padding:10px;
-    display: inline-block;
-    box-sizing: border-box;
-}
-
-.doneColumn {
-    width: 33%;
-    padding: 10px;
-    display: inline-block;
-    box-sizing: border-box;
+ul{
+  list-style-type: none;
+  list-style-position: inside;
 }
 
 .task {

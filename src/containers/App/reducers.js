@@ -1,7 +1,6 @@
 import { ADD_CARD, EDIT_CARD, DELETE_CARD, MOVE_CARD, TOGGLE_TODO } from './actions';
 
 const cardReducers = (state = [], action) => {
-  console.log('action', action)
   switch (action.type) {
     case ADD_CARD:
       return [...state, action.newCard]
