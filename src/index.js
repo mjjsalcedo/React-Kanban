@@ -6,10 +6,14 @@ import App from './containers/App/App.js';
 import { Provider } from 'react-redux';
 
 import cardReducers from './containers/App/reducers';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxThunk from 'redux-thunk';
 
-import { createStore } from 'redux';
-let store = createStore(cardReducers);
-
+const store = createStore(
+  cardReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(ReduxThunk)
+);
 render(
   <Provider store={store}>
     <App />

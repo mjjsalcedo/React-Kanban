@@ -1,11 +1,10 @@
 import { ADD_CARD, EDIT_CARD, DELETE_CARD, MOVE_CARD, TOGGLE_TODO } from './actions';
 
-let id = 0;
-
 const cardReducers = (state = [], action) => {
+  console.log('action', action)
   switch (action.type) {
     case ADD_CARD:
-      return addCard(state, action);
+      return { card: [...action.card] }
     case EDIT_CARD:
       return editCard(state, action);
     case DELETE_CARD:
@@ -29,7 +28,7 @@ const cardReducers = (state = [], action) => {
   }
 }
 
-function addCard(state, action) {
+/*function addCard(state, action) {
   id = ++id;
   return [
     ...state,
@@ -42,7 +41,7 @@ function addCard(state, action) {
       assignedTo: action.assignedTo
     }
   ];
-}
+}*/
 
 function editCard(state, action) {
   var cardEdits = action.card
